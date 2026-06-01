@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/news/search",
+      "destination": "https://gnews.io/api/v4/search"
+    },
+    {
+      "source": "/api/news/top-headlines",
+      "destination": "https://gnews.io/api/v4/top-headlines"
+    }
+  ]
+}
