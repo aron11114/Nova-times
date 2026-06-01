@@ -1,0 +1,209 @@
+/* =========================================
+   RESET Y VARIABLES GLOBALES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a; /* Fondo oscuro elegante */
+    color: #f8fafc; /* Texto claro */
+    line-height: 1.6;
+}
+
+/* =========================================
+   BARRA DE NAVEGACIÓN (HEADER / NAVBAR)
+   ========================================= */
+header, .header, .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #1e293b;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    flex-wrap: wrap; /* Evita que se rompa si hay muchos elementos */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+/* SOLUCIÓN AL PROBLEMA: Aplica flex y separación use la estructura que use la subpágina */
+nav, nav ul, .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px; /* Espacio de separación para que no se vean juntas */
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a, header a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    white-space: nowrap; /* Evita que una palabra se parta en dos líneas */
+}
+
+nav a:hover, nav a.active {
+    color: #38bdf8; /* Color azul claro de tu diseño */
+}
+
+#lang-selector, .lang-selector {
+    padding: 6px 12px;
+    background-color: #0f172a;
+    color: white;
+    border: 1px solid #38bdf8;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* =========================================
+   SECCIÓN HERO / TÍTULOS DE PÁGINAS
+   ========================================= */
+.hero, .hero-section, .page-title {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1, .hero h2, .hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.hero p, .hero-section p {
+    color: #94a3b8;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   CUADRÍCULA DE NOTICIAS
+   ========================================= */
+#news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 5%;
+    max-width: 1400px;
+    margin: 0 auto 60px auto;
+}
+
+/* =========================================
+   TARJETAS INDIVIDUALES (CARDS)
+   ========================================= */
+.news-card {
+    background: #1e293b; 
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.news-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 2px solid #38bdf8;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #f8fafc;
+    line-height: 1.4;
+}
+
+.news-content p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.read-more {
+    display: inline-block;
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+
+/* =========================================
+   ESTADOS Y MENSAJES
+   ========================================= */
+.loading, .error-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #94a3b8;
+    padding: 40px;
+    grid-column: 1 / -1;
+}
+
+/* =========================================
+   📱 RESPONSIVE MÓVIL (Celulares)
+   ========================================= */
+@media (max-width: 768px) {
+    header, .header, .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+        text-align: center;
+    }
+
+    nav, nav ul, .nav-links {
+        justify-content: center;
+        gap: 15px; /* Un poco más compacto en celular pero bien separado */
+    }
+
+    .hero, .hero-section, .page-title {
+        padding: 40px 15px;
+    }
+
+    .hero h1, .hero h2, .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p, .hero-section p {
+        font-size: 1rem;
+    }
+
+    #news-container {
+        grid-template-columns: 1fr;
+        padding: 10px 15px;
+        gap: 20px;
+    }
+    
+    .news-card img {
+        height: 200px;
+    }
+}
